@@ -81,7 +81,8 @@ def kpis(periodo, regioes, categorias):
         return pn.pane.HTML(
             f"""
             <div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;
-                        padding:1rem 1.2rem;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+                        padding:1rem 1.2rem;box-shadow:0 1px 2px rgba(0,0,0,.04);
+                        height:100%;box-sizing:border-box;">
               <div style="color:#6b7280;font-size:.8rem;text-transform:uppercase;
                           letter-spacing:.04em;">{titulo}</div>
               <div style="color:#111827;font-size:1.7rem;font-weight:700;
@@ -90,14 +91,16 @@ def kpis(periodo, regioes, categorias):
             </div>
             """,
             sizing_mode="stretch_width",
+            margin=(0, 6),
         )
 
-    return pn.FlexBox(
+    # pn.Row divide o espaço horizontal igualmente -> 4 KPIs lado a lado.
+    return pn.Row(
         card("Receita", f"R$ {receita:,.0f}".replace(",", "."), "no período filtrado"),
         card("Lucro", f"R$ {lucro:,.0f}".replace(",", "."), f"margem {margem:.1f}%"),
         card("Pedidos", f"{pedidos:,}".replace(",", "."), "total de pedidos"),
         card("Ticket médio", f"R$ {ticket:,.0f}".replace(",", "."), "receita / pedido"),
-        flex_direction="row", gap="1rem",
+        sizing_mode="stretch_width",
     )
 
 

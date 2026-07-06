@@ -9,6 +9,8 @@ automaticamente conforme a seleção. Os dados são **sintéticos e determiníst
 (gerados com semente fixa), então o projeto **roda offline**, sem precisar de banco
 ou de arquivos externos.
 
+![Dashboard de Vendas com Panel](screenshots/dashboard.png)
+
 ---
 
 ## ✨ O que tem
