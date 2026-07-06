@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Panel / Bokeh
+*.log
+
+# SO / editores
+.DS_Store
+.idea/
+.vscode/
