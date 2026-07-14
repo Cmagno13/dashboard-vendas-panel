@@ -77,9 +77,10 @@ def gerar_vendas(seed: int = 42) -> pd.DataFrame:
             "pedidos", "unidades", "receita", "custo",
         ],
     )
-    df["lucro"] = df["receita"] - df["custo"]
-    df["mes"] = df["data"].dt.to_period("M").dt.to_timestamp()
-    return df
+    return df.assign(
+        lucro=df["receita"] - df["custo"],
+        mes=df["data"].dt.to_period("M").dt.to_timestamp(),
+    )
 
 
 if __name__ == "__main__":
